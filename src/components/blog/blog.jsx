@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { IoIosBookmarks } from "react-icons/io";
 const Blog =({blog ,handleAddToBookmarks,handleMarkAsRead})=> {
-    const {title, cover,author,img,reading_time, posted,hashtags} = blog;
+    const {id,title, cover,author,img,reading_time, posted,hashtags} = blog;
   return (
     <div className='mb-20 space-y-4'>
         <img className='w-full mb-8' src={cover} alt={ `cover picture of the title ${title}`} />
@@ -25,7 +25,7 @@ const Blog =({blog ,handleAddToBookmarks,handleMarkAsRead})=> {
             hashtags.map((hash,idx)=><span key={idx}><a href="">{hash}</a></span>)    
         }</p>
         <button
-        onClick={()=>handleMarkAsRead(reading_time)}
+        onClick={()=>handleMarkAsRead(id,reading_time)}
          className='text-purple-600 font-bold underline'
         >Mark As Read</button>
     </div>
